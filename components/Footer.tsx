@@ -82,8 +82,6 @@ export const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Видео-туториалы</a></li>
             </ul>
             <div className="mt-6 pt-6 border-t border-stone-200">
-              <a href="#" className="text-[#E85D3B] text-sm hover:underline">Войти в личный кабинет</a>
-              <br />
               <a href="#tariffs" className="text-stone-500 text-sm hover:text-[#E85D3B] transition-colors">Записаться на консультацию</a>
             </div>
           </div>
@@ -93,7 +91,7 @@ export const Footer: React.FC = () => {
       {/* Bottom bar */}
       <div className="border-t border-stone-200">
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-stone-400 text-xs">
-          <span>© 2024 Виолетта Новикова. Все права защищены.</span>
+          <span>© {new Date().getFullYear()} Виолетта Новикова. Все права защищены.</span>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <a href="#" className="hover:text-[#E85D3B] transition-colors">Политика конфиденциальности</a>
             <a href="#" className="hover:text-[#E85D3B] transition-colors">Оферта</a>
