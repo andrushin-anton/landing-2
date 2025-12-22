@@ -75,69 +75,74 @@ export const Hero: React.FC = () => {
         >
         </div>
         
-        {/* Main headline - mymind italic style */}
+        {/* Main headline */}
         <h1 
-          className={`font-serif text-5xl md:text-6xl lg:text-7xl text-stone-900 leading-[1.1] mb-8 transition-all duration-700 ${
+          className={`font-serif text-4xl md:text-5xl lg:text-6xl text-stone-900 leading-[1.15] mb-8 transition-all duration-700 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
           style={{ transitionDelay: '200ms', marginTop: '50px'}}
         >
-          <span className="italic">Здоровье начинается</span>
+          <span className="italic">Здоровье вашей семьи</span>
           <br />
-          <span className="italic">с вопроса.</span>
+          <span className="italic">начинается с </span>
+          <span className="italic text-[#E85D3B]">простого вопроса</span>
         </h1>
         
-        {/* Tagline with pill badges - mymind style */}
+        {/* Subheadline - Key question */}
+        <p 
+          className={`max-w-2xl mx-auto text-stone-600 text-lg md:text-xl font-light leading-relaxed mb-8 transition-all duration-700 ${
+            isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+          style={{ transitionDelay: '300ms' }}
+        >
+          <strong className="font-medium text-stone-800">Что, если усталость — не норма,</strong> а еда может быть источником радости и сил, а не постоянного контроля?
+        </p>
+        
+        {/* Tagline with pill badges */}
         <div 
           className={`flex flex-wrap items-center justify-center gap-2 mb-6 transition-all duration-700 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
-          style={{ transitionDelay: '350ms' }}
-        >
-          <span className="text-stone-500">Ваши</span>
-          <span className="px-3 py-1 rounded-full border border-[#E85D3B] text-[#E85D3B] text-sm">привычки</span>
-          <span className="px-3 py-1 rounded-full border border-green-500 text-green-600 text-sm">питание</span>
-          <span className="px-3 py-1 rounded-full border border-[#E85D3B] text-[#E85D3B] text-sm">анализы</span>
-        </div>
-        
-        <div 
-          className={`flex flex-wrap items-center justify-center gap-2 mb-10 transition-all duration-700 ${
-            isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
           style={{ transitionDelay: '400ms' }}
         >
-          <span className="px-3 py-1 rounded-full border border-purple-400 text-purple-500 text-sm">энергия</span>
-          <span className="text-stone-500">и</span>
-          <span className="px-3 py-1 rounded-full border border-blue-400 text-blue-500 text-sm">баланс</span>
-          <span className="text-stone-500">в одном месте.</span>
+          <span className="text-stone-500">Найдите</span>
+          <span className="px-3 py-1 rounded-full border border-[#E85D3B] text-[#E85D3B] text-sm">баланс</span>
+          <span className="px-3 py-1 rounded-full border border-green-500 text-green-600 text-sm">энергию</span>
+          <span className="px-3 py-1 rounded-full border border-purple-400 text-purple-500 text-sm">спокойствие</span>
         </div>
         
         {/* Description */}
         <p 
-          className={`max-w-xl mx-auto text-stone-500 text-lg font-light leading-relaxed mb-10 transition-all duration-700 ${
+          className={`max-w-xl mx-auto text-stone-500 text-base font-light leading-relaxed mb-10 transition-all duration-700 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
           style={{ transitionDelay: '500ms' }}
         >
-          Помогаю телу и психике найти общий язык. Создаю надежный фундамент энергии и гармонии для вашей семьи.
+          Я помогу сделать питание естественной частью жизни вашей семьи. <span className="font-medium text-stone-700">Без строгих диет и чувства вины.</span>
         </p>
         
-        {/* CTA Button - coral style */}
+        {/* CTA Buttons */}
         <div 
-          className={`transition-all duration-700 ${
+          className={`flex flex-col sm:flex-row gap-4 justify-center transition-all duration-700 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
           style={{ transitionDelay: '600ms' }}
         >
           <a 
             href="#tariffs" 
-            className="inline-block btn-coral px-8 py-4 rounded-full text-base font-medium uppercase tracking-wider text-sm"
+            className="inline-block btn-coral px-8 py-4 rounded-full text-base font-medium"
           >
             Записаться
           </a>
+          <a 
+            href="#problems" 
+            className="inline-block px-8 py-4 rounded-full text-base font-medium border-2 border-stone-300 text-stone-700 hover:border-[#E85D3B] hover:text-[#E85D3B] transition-all"
+          >
+            Узнать больше
+          </a>
         </div>
         
-        {/* Platform badges - mymind style */}
+        {/* Platform badges */}
         <div 
           className={`flex flex-wrap items-center justify-center gap-4 mt-16 transition-all duration-700 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
@@ -177,7 +182,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
         
-        {/* "Looking for..." link - mymind style */}
+        {/* "Looking for..." link */}
         <div 
           className={`mt-8 transition-all duration-700 ${
             isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
@@ -185,7 +190,7 @@ export const Hero: React.FC = () => {
           style={{ transitionDelay: '850ms' }}
         >
           <a href="#story" className="text-[#E85D3B] text-sm hover:underline">
-            Узнать больше обо мне?
+            Узнать больше обо мне →
           </a>
         </div>
       </div>

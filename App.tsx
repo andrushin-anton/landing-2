@@ -2,11 +2,11 @@
 import React, { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { Problems } from './components/Problems';
 import { Story } from './components/Story';
 import { Philosophy } from './components/Philosophy';
 import { Tariffs } from './components/Tariffs';
 import { Footer } from './components/Footer';
-import { GeminiChat } from './components/GeminiChat';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -60,23 +60,25 @@ const App: React.FC = () => {
           <Hero />
         </section>
         
-        <section id="story" className="py-24 md:py-32 px-6 md:px-12 bg-white">
+        <section id="problems" className="py-24 md:py-32 px-6 md:px-12 bg-white">
+          <Problems />
+        </section>
+
+        <section id="story" className="py-24 md:py-32 px-6 md:px-12 bg-[#FFF8F3]">
           <Story />
         </section>
 
-        <section id="approach" className="py-24 md:py-32 px-6 md:px-12 bg-[#FFF8F3]">
+        <section id="approach" className="py-24 md:py-32 px-6 md:px-12 bg-white">
           <Philosophy />
         </section>
 
-        <section id="tariffs" className="py-24 md:py-32 px-6 md:px-12 bg-white">
+        <section id="tariffs" className="py-24 md:py-32 px-6 md:px-12 bg-[#FFF8F3]">
           <Tariffs />
         </section>
       </main>
       
       <Footer />
       
-      {/* AI Assistant for immediate engagement */}
-      <GeminiChat />
     </div>
   );
 };

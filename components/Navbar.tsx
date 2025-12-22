@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import logo from '@/logo.svg';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,22 +33,7 @@ export const Navbar: React.FC = () => {
             <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
               isScrolled ? 'bg-stone-100' : 'bg-white/80'
             }`}>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 100 70" fill="none" className="text-[#E85D3B]">
-                {/* Center petal */}
-                <path d="M50 45 C45 35 44 20 50 5 C56 20 55 35 50 45" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                {/* Inner left petal */}
-                <path d="M50 45 C42 38 35 28 38 12 C48 22 50 35 50 45" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                {/* Inner right petal */}
-                <path d="M50 45 C58 38 65 28 62 12 C52 22 50 35 50 45" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                {/* Middle left petal */}
-                <path d="M50 45 C38 42 25 38 22 22 C38 28 48 38 50 45" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                {/* Middle right petal */}
-                <path d="M50 45 C62 42 75 38 78 22 C62 28 52 38 50 45" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                {/* Outer left petal */}
-                <path d="M50 45 C32 48 12 50 2 40 C18 35 38 40 50 45" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-                {/* Outer right petal */}
-                <path d="M50 45 C68 48 88 50 98 40 C82 35 62 40 50 45" stroke="currentColor" strokeWidth="2" fill="none" strokeLinejoin="round"/>
-              </svg>
+              <img src={logo} alt="Логотип" width="24" height="24"/>
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-lg tracking-tight text-stone-800 group-hover:text-[#E85D3B] transition-colors">

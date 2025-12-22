@@ -6,34 +6,6 @@ export const Footer: React.FC = () => {
     <footer id="contact" className="bg-[#FFF8F3] border-t border-stone-100">
       {/* Main footer content */}
       <div className="max-w-6xl mx-auto px-6 py-16">
-        {/* Top section with logo and tagline */}
-        <div className="flex flex-col md:flex-row items-start justify-between gap-12 mb-16">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-stone-700">
-                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
-              </svg>
-            </div>
-            <div>
-              <span className="font-serif text-xl text-stone-800">Виолетта</span>
-              <span className="mx-2 text-stone-300">•</span>
-              <span className="text-stone-400 italic text-sm">Найдите свой баланс.</span>
-            </div>
-          </div>
-          
-          {/* CTA Banner */}
-          <a 
-            href="#tariffs"
-            className="group flex items-center gap-4 px-6 py-4 bg-stone-900 text-white rounded-2xl hover:bg-stone-800 transition-all"
-          >
-            <span className="font-serif text-lg">Как это работает</span>
-            <span className="text-xs text-stone-400 border border-stone-700 px-3 py-1 rounded-full group-hover:bg-stone-700 transition-all">
-              узнать больше
-            </span>
-          </a>
-        </div>
-        
         {/* Links grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           <div>
