@@ -61,27 +61,22 @@ export const Story: React.FC = () => {
         <div className="lg:w-3/5 reveal" style={{ transitionDelay: '200ms' }}>
           <div className="space-y-8 text-lg leading-relaxed text-stone-600 font-light">
             <p className="first-letter:text-5xl first-letter:font-serif first-letter:mr-3 first-letter:float-left first-letter:leading-none first-letter:text-[#E85D3B] first-letter:italic">
-              Знаете, откуда начинается настоящее здоровье? Не из банки с витаминами. Оно начинается с вопроса. С того самого, который однажды тихо прозвучал у вас в голове: «А что, если можно жить и чувствовать себя <em>иначе</em>?»
+              Знаете, откуда начинается настоящее здоровье? Не из банки с витаминами. Оно начинается с вопроса. С того самого, который однажды тихо прозвучал у вас в голове: «А что, если можно жить и чувствовать себя иначе?»
             </p>
             
             <p>
               Мой путь начался именно так. С вопросов о здоровье моей собственной семьи. Я чувствовала, что ответ нужно искать глубже, чем просто «ешь это, не ешь то».
             </p>
-            
-            {/* Quote block - Psychology */}
-            <div className="relative p-8 bg-gradient-to-br from-[#FFF8F3] to-[#FFE8D6]/30 rounded-3xl my-12">
-              <div className="absolute top-4 left-4 text-4xl text-[#E85D3B]/20 font-serif">"</div>
-              <p className="italic text-stone-700 text-xl leading-relaxed pl-6">
-                Поэтому я пошла учиться на психолога. Год в Московском институте психологии убедил меня: <span className="font-semibold text-stone-900">тело и психика неразделимы.</span>
-              </p>
-            </div>
+            <p>
+            Поэтому я пошла учиться на психолога. Год в Московском институте психологии убедил меня: <strong className="font-medium text-stone-800"><em>тело и психика неразделимы.</em></strong>
+            </p>
             
             <p>
               Как можно корректировать питание, не понимая стрессов, привычек, характера человека? Настоящее здоровье — это баланс.
             </p>
             
             <p>
-              <strong className="font-medium text-stone-800">С этим пониманием я погрузилась в нутрициологию.</strong> Я изучала витамины, здоровье ЖКТ, митохондриальную функцию, детскую нутрициологию — всё, что помогает сложить пазл «человек» в единую картину.
+              <strong className="font-medium text-stone-900"><em>С этим пониманием я погрузилась в нутрициологию.</em></strong> Я изучала витамины, здоровье ЖКТ, митохондриальную функцию, детскую нутрициологию — всё, что помогает сложить пазл «человек» в единую картину.
             </p>
             
             {/* Key insight box */}
