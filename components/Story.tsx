@@ -83,7 +83,7 @@ export const Story: React.FC = () => {
             <div className="p-6 bg-stone-900 text-white rounded-2xl">
               <p className="text-sm uppercase tracking-wider text-stone-400 mb-2">Мой подход</p>
               <p className="font-serif text-xl italic">
-                Сегодня я помогаю не лечить болезни, а <span className="text-[#E85D3B]">находить баланс</span>. Использую еду, микроэлементы и понимание психологии как инструменты.
+                Сегодня я помогаю не лечить болезни, а <span className="text-[#E85D3B]">находить баланс.</span> Используя еду, микроэлементы и понимание психологии как инструменты, ведь не существует волшебной таблетки и единого подхода для всех.
               </p>
             </div>
             
