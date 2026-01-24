@@ -1,5 +1,5 @@
-
 import React from 'react';
+import myPhoto from '@/assets/my-photo.png';
 
 export const Story: React.FC = () => {
   return (
@@ -24,9 +24,9 @@ export const Story: React.FC = () => {
               <div className="absolute -inset-4 bg-gradient-to-br from-[#FFE8D6] to-[#FFF8F3] rounded-3xl -z-10" />
               
               <img 
-                src="https://picsum.photos/600/800?grayscale&v=1" 
+                src={myPhoto} 
                 alt="Семейный нутрициолог Виолетта Новикова" 
-                className="w-full aspect-[3/4] object-cover rounded-2xl mymind-shadow grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full aspect-[3/4] object-cover rounded-2xl mymind-shadow hover:grayscale-0 transition-all duration-700"
               />
               
               {/* Floating badge */}
