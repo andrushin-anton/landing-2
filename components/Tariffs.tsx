@@ -4,6 +4,7 @@ import React from 'react';
 interface PriceCardProps {
   title: string;
   price: string;
+  oldPrice?: string;
   goal: string;
   features: string[];
   bonus?: string;
@@ -12,7 +13,7 @@ interface PriceCardProps {
   delay: number;
 }
 
-const PriceCard: React.FC<PriceCardProps> = ({ title, price, goal, features, bonus, highlight, color, delay }) => (
+const PriceCard: React.FC<PriceCardProps> = ({ title, price, oldPrice, goal, features, bonus, highlight, color, delay }) => (
   <div 
     className="tariff-card reveal"
     style={{ transitionDelay: `${delay}ms` }}
@@ -55,8 +56,15 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, goal, features, bon
         <h3 className={`font-serif text-2xl mb-2 italic ${highlight ? 'text-white' : 'text-stone-900'}`}>
           {title}
         </h3>
-        <div className={`text-sm uppercase tracking-widest font-bold ${highlight ? 'text-stone-400' : 'text-stone-400'}`}>
-          {price}
+        <div className="flex items-center gap-2">
+          {oldPrice && (
+            <span className={`text-sm uppercase tracking-widest font-bold line-through opacity-50 ${highlight ? 'text-stone-500' : 'text-stone-400'}`}>
+              {oldPrice}
+            </span>
+          )}
+          <div className={`text-sm uppercase tracking-widest font-bold ${highlight ? 'text-stone-400' : 'text-stone-400'}`}>
+            {price}
+          </div>
         </div>
       </div>
       
@@ -134,13 +142,14 @@ export const Tariffs: React.FC = () => {
         <PriceCard 
           highlight
           title="Оптимальный старт"
-          price="5 000 ₽"
+          price="4 000 ₽"
           goal="Разобраться в причинах состояния, получить персональный план."
           features={[
             "Расширенная анкета здоровья и анализ дневника питания за недельный период.",
             "Детальный интегративный протокол с персонализированными рекомендациями по питанию, образу жизни и приему БАД на 2 месяца.",
             "Ответы до 10 вопросов по почте в течение 2-х недель после получения рекомендаций."
           ]}
+          oldPrice="5 000 ₽"
           bonus=""
           color="#4CAF50"
           delay={100}
@@ -148,13 +157,14 @@ export const Tariffs: React.FC = () => {
         
         <PriceCard 
           title="Премиум"
-          price="10 000 ₽"
+          price="8 000 ₽"
           goal="Полное погружение, трансформация привычек и устойчивый результат."
           features={[
             "Расширенная анкета здоровья, чек-ап анализов, разбор дневника питания за недельный период.",
             "Детальный интегративный протокол с персонализированными рекомендациями по питанию, образу жизни и приему БАД на 3 месяца.",
             "Ответы на вопросы по почте в течение 3-х месяцев после получения рекомендаций."
           ]}
+          oldPrice="10 000 ₽"
           bonus=""
           color="#9C27B0"
           delay={200}
