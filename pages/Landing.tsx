@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
 import { Problems } from '../components/Problems';
@@ -8,6 +9,21 @@ import { Tariffs } from '../components/Tariffs';
 import { Footer } from '../components/Footer';
 
 export const Landing: React.FC = () => {
+  const location = useLocation();
+
+  // Scroll to hash when navigating from another page (e.g. /offer → /#tariffs)
+  useEffect(() => {
+    const hash = location.hash?.slice(1);
+    if (hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        requestAnimationFrame(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+    }
+  }, [location.pathname, location.hash]);
+
   useEffect(() => {
     const handleScroll = () => {
       const reveals = document.querySelectorAll('.reveal');

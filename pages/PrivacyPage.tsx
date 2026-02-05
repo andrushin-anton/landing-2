@@ -8,7 +8,7 @@ export const PrivacyPage: React.FC = () => {
       <Navbar />
       <main className="bg-[#FFF8F3]">
         <section className="max-w-6xl mx-auto px-6 md:px-12 py-24 md:py-32">
-          <h1 className="font-serif text-3xl md:text-4xl text-stone-800 mb-8">
+          <h1 style={{textAlign: 'center'}} className="font-serif text-3xl md:text-4xl text-stone-800 mb-8">
             Политика конфиденциальности
           </h1>
           <div className="text-stone-600 font-light leading-relaxed space-y-4 [&_a]:text-[#E85D3B] [&_a]:underline [&_a:hover]:opacity-80">

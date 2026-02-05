@@ -1,11 +1,12 @@
-
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/logo.svg';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isLanding = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -18,6 +19,24 @@ export const Navbar: React.FC = () => {
     { label: 'Подход', href: '#approach', color: '#4CAF50' },
     { label: 'Тарифы', href: '#tariffs', color: '#9C27B0' },
   ];
+
+  const getMenuLink = (item: (typeof menuItems)[0]) => {
+    if (isLanding) {
+      return <a href={item.href} className="flex items-center gap-2 hover:text-stone-900 transition-colors link-hover">
+        <span className="menu-dot" style={{ backgroundColor: item.color }} />
+        {item.label}
+      </a>;
+    }
+    return (
+      <Link
+        to={{ pathname: '/', hash: item.href.slice(1) }}
+        className="flex items-center gap-2 hover:text-stone-900 transition-colors link-hover"
+      >
+        <span className="menu-dot" style={{ backgroundColor: item.color }} />
+        {item.label}
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -46,17 +65,7 @@ export const Navbar: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
             {menuItems.map((item) => (
-              <a 
-                key={item.label}
-                href={item.href} 
-                className="flex items-center gap-2 hover:text-stone-900 transition-colors link-hover"
-              >
-                <span 
-                  className="menu-dot"
-                  style={{ backgroundColor: item.color }}
-                />
-                {item.label}
-              </a>
+              <React.Fragment key={item.label}>{getMenuLink(item)}</React.Fragment>
             ))}
             
             
@@ -103,37 +112,66 @@ export const Navbar: React.FC = () => {
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8">
-          {menuItems.map((item, index) => (
-            <a 
-              key={item.label}
-              href={item.href}
+          {menuItems.map((item, index) =>
+            isLanding ? (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-3 text-2xl font-serif text-stone-800 hover:text-[#E85D3B] transition-all"
+                style={{
+                  transitionDelay: `${index * 50}ms`,
+                  transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                  opacity: isMobileMenuOpen ? 1 : 0,
+                }}
+              >
+                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color }} />
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.label}
+                to={{ pathname: '/', hash: item.href.slice(1) }}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center gap-3 text-2xl font-serif text-stone-800 hover:text-[#E85D3B] transition-all"
+                style={{
+                  transitionDelay: `${index * 50}ms`,
+                  transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                  opacity: isMobileMenuOpen ? 1 : 0,
+                }}
+              >
+                <span className="w-2 h-2 rounded-full" style={{ backgroundColor: item.color }} />
+                {item.label}
+              </Link>
+            )
+          )}
+          {isLanding ? (
+            <a
+              href="#tariffs"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center gap-3 text-2xl font-serif text-stone-800 hover:text-[#E85D3B] transition-all"
-              style={{ 
-                transitionDelay: `${index * 50}ms`,
+              className="btn-coral px-8 py-4 rounded-full text-lg font-medium mt-8"
+              style={{
+                transitionDelay: '200ms',
                 transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
-                opacity: isMobileMenuOpen ? 1 : 0
+                opacity: isMobileMenuOpen ? 1 : 0,
               }}
             >
-              <span 
-                className="w-2 h-2 rounded-full"
-                style={{ backgroundColor: item.color }}
-              />
-              {item.label}
+              Записаться
             </a>
-          ))}
-          <a 
-            href="#tariffs"
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="btn-coral px-8 py-4 rounded-full text-lg font-medium mt-8"
-            style={{ 
-              transitionDelay: '200ms',
-              transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
-              opacity: isMobileMenuOpen ? 1 : 0
-            }}
-          >
-            Записаться
-          </a>
+          ) : (
+            <Link
+              to={{ pathname: '/', hash: 'tariffs' }}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="btn-coral px-8 py-4 rounded-full text-lg font-medium mt-8"
+              style={{
+                transitionDelay: '200ms',
+                transform: isMobileMenuOpen ? 'translateY(0)' : 'translateY(20px)',
+                opacity: isMobileMenuOpen ? 1 : 0,
+              }}
+            >
+              Записаться
+            </Link>
+          )}
         </div>
       </div>
     </>
