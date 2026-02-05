@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '@/logo.svg';
 
 export const Navbar: React.FC = () => {
@@ -29,7 +30,7 @@ export const Navbar: React.FC = () => {
       >
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-500 ${
               isScrolled ? 'bg-stone-100' : 'bg-white/80'
             }`}>
@@ -40,7 +41,7 @@ export const Navbar: React.FC = () => {
                 Виолетта Новикова
               </span>
             </div>
-          </a>
+          </Link>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">

@@ -26,9 +26,7 @@ export const Footer: React.FC = () => {
             </h5>
             <ul className="space-y-3 text-stone-600 font-light text-sm">
               <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Telegram</a></li>
-              <li><a href="#" className="hover:text-[#E85D3B] transition-colors">WhatsApp</a></li>
-              <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Email</a></li>
-              <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Instagram</a></li>
+              <li><a href="#" className="hover:text-[#E85D3B] transition-colors">VK</a></li>
             </ul>
           </div>
           
@@ -50,8 +48,8 @@ export const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-[#E85D3B] transition-colors flex items-center gap-1">
                 <span className="text-[#E85D3B]">@</span>violetta в Telegram
               </a></li>
-              <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Гайды и материалы</a></li>
-              <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Видео-туториалы</a></li>
+              {/* <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Гайды и материалы</a></li>
+              <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Видео-туториалы</a></li> */}
             </ul>
             <div className="mt-6 pt-6 border-t border-stone-200">
               <a href="#tariffs" className="text-stone-500 text-sm hover:text-[#E85D3B] transition-colors">Записаться на консультацию</a>
@@ -65,8 +63,8 @@ export const Footer: React.FC = () => {
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-stone-400 text-xs">
           <span>© {new Date().getFullYear()} Виолетта Новикова. Все права защищены.</span>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-[#E85D3B] transition-colors">Политика конфиденциальности</a>
-            <a href="#" className="hover:text-[#E85D3B] transition-colors">Оферта</a>
+            <a href="/privacy" className="hover:text-[#E85D3B] transition-colors">Политика конфиденциальности</a>
+            <a href="/offer" className="hover:text-[#E85D3B] transition-colors">Оферта</a>
             <span className="text-stone-300">|</span>
             <span>Сделано с 💚</span>
           </div>
