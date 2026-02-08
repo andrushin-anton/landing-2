@@ -95,8 +95,11 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, oldPrice, goal, fea
         </div>
       )}
       
-      <button 
-        className={`w-full py-4 rounded-full text-sm font-bold transition-all duration-300 ${
+      <a 
+        href="https://t.me/MartaAssistant"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`block w-full py-4 rounded-full text-sm font-bold transition-all duration-300 text-center ${
           highlight 
             ? 'bg-white text-stone-900 hover:scale-[1.02] hover:shadow-lg' 
             : 'hover:scale-[1.02]'
@@ -104,7 +107,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ title, price, oldPrice, goal, fea
         style={!highlight ? { backgroundColor: color, color: 'white' } : {}}
       >
         Выбрать тариф
-      </button>
+      </a>
     </div>
   </div>
 );
@@ -128,33 +131,34 @@ export const Tariffs: React.FC = () => {
       {/* Tariff cards grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16">
         <PriceCard 
-          title="Ситуационный разбор"
-          price="2 000 ₽"
-          goal="Получить четкий план действий по одной актуальной проблеме, для срочного вопроса или второго мнения без глубокого анализа (например, «краткая помощь в выборе добавок и их приема», «как поддержать свой организм при антибактериальной терапии»)."
+          title="Витаминный баланс"
+          price="4 000 ₽"
+          goal="Коррекция дефицитов витаминов и минералов."
           features={[
-            "Ответы на не более чем 5 вопрос по состоянию здоровья без составления рекомендаций на почту."
+            "Расширенная анкета здоровья, чек-ап анализов, подбор конкретных активных форм БАД с указанием дозировок, времени приема, синергии с другими нутриентами на 2-3 месяца.",
+            "Ответы до 10 вопросов по почте в течении 2-х недель после получения рекомендаций."
           ]}
+          oldPrice="5 000 ₽"
           bonus=""
           color="#E85D3B"
-          delay={0}
+          delay={100}
         />
-        
+
         <PriceCard 
-          highlight
           title="Оптимальный старт"
-          price="4 000 ₽"
+          price="5 000 ₽"
           goal="Разобраться в причинах состояния, получить персональный план."
           features={[
-            "Расширенная анкета здоровья и анализ дневника питания за недельный период.",
+            "Расширенная анкета здоровья, минимальный чек-ап анализов.",
             "Детальный интегративный протокол с персонализированными рекомендациями по питанию, образу жизни и приему БАД на 2 месяца.",
             "Ответы до 10 вопросов по почте в течение 2-х недель после получения рекомендаций."
           ]}
-          oldPrice="5 000 ₽"
+          oldPrice="6 000 ₽"
           bonus=""
           color="#4CAF50"
           delay={100}
         />
-        
+
         <PriceCard 
           title="Премиум"
           price="8 000 ₽"
@@ -169,6 +173,33 @@ export const Tariffs: React.FC = () => {
           color="#9C27B0"
           delay={200}
         />
+        
+        <PriceCard 
+          title="Ситуационный разбор"
+          price="1 500 ₽"
+          goal="Получить четкий план действий по одной актуальной проблеме, для срочного вопроса или второго мнения без глубокого анализа (например, «краткая помощь в выборе добавок и их приема», «как поддержать свой организм при антибактериальной терапии»)."
+          features={[
+            "Ответы на не более чем 5 вопрос по состоянию здоровья без составления рекомендаций на почту."
+          ]}
+          bonus=""
+          color="#E85D3B"
+          delay={0}
+        />
+        
+        <PriceCard 
+          title="Копрограмма"
+          price="2 500 ₽"
+          goal="Выявление не симптомов, а возможных коренных причин нарушения пищеварения. Что на самом деле показывают параметры вашей копрограммы, простым языком."
+          features={[
+            "Детальный разбор каждого значимого параметра в вашем анализе копрограммы с дальнейшими рекомендациями по корректировке питания и планом что делать дальше."
+          ]}
+          oldPrice="3 500 ₽"
+          bonus=""
+          color="#9C27B0"
+          delay={100}
+        />
+        
+        
       </div>
       
       {/* Express consultation banner */}
@@ -190,9 +221,12 @@ export const Tariffs: React.FC = () => {
               <div className="text-2xl font-serif text-stone-900">2 500 ₽</div>
               <span className="text-xs text-stone-400"></span>
             </div>
-            <button className="px-6 py-3 border-2 border-[#2196F3] text-[#2196F3] rounded-full text-sm font-bold uppercase tracking-wider hover:bg-[#2196F3] hover:text-white transition-all duration-300">
+            <a 
+              href="#tariffs"
+              className="px-6 py-3 border-2 border-[#2196F3] text-[#2196F3] rounded-full text-sm font-bold uppercase tracking-wider hover:bg-[#2196F3] hover:text-white transition-all duration-300 inline-block"
+            >
               Записаться
-            </button>
+            </a>
           </div>
         </div>
       </div>

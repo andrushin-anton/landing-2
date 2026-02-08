@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
               Связаться
             </h5>
             <ul className="space-y-3 text-stone-600 font-light text-sm">
-              <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Telegram</a></li>
+              <li><a href="https://t.me/violetta_nutrition" className="hover:text-[#E85D3B] transition-colors">Telegram</a></li>
               <li><a href="#" className="hover:text-[#E85D3B] transition-colors">VK</a></li>
             </ul>
           </div>
@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
               Помощь
             </h5>
             <ul className="space-y-3 text-stone-600 font-light text-sm">
-              <li><a href="#" className="hover:text-[#E85D3B] transition-colors flex items-center gap-1">
+              <li><a href="https://t.me/violetta_nutrition" className="hover:text-[#E85D3B] transition-colors flex items-center gap-1">
                 <span className="text-[#E85D3B]">@</span>violetta в Telegram
               </a></li>
               {/* <li><a href="#" className="hover:text-[#E85D3B] transition-colors">Гайды и материалы</a></li>
